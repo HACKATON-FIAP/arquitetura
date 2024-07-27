@@ -1,0 +1,83 @@
+services:
+
+  hackaton-gateway:
+    image: 'hackaton-gateway:0.0.1-SNAPSHOT'
+    build:
+      context: ../hackaton-gateway
+    container_name: hackaton-gateway
+    ports:
+      - 8080:8080
+    depends_on:
+      hackaton-discovery-service:
+        condition: service_started
+    restart: always
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://hackaton-discovery-service:8761/eureka/
+
+  hackaton-discovery-service:
+    image: 'hackaton-discovery-service:0.0.1-SNAPSHOT'
+    build:
+      context: ../hackaton-discovery-service
+    container_name: hackaton-discovery-service
+    ports:
+      - 8761:8761
+    restart: always
+
+  hackaton-usuarios-app:
+    image: 'hackaton-usuarios-app:0.0.1-SNAPSHOT'
+    build:
+      context: ../hackaton-usuarios-app
+    container_name: hackaton-usuarios-app
+    ports:
+      - 8081:8081
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+      hackaton-discovery-service:
+        condition: service_started
+    environment:
+      - DATASOURCE_URL=jdbc:postgresql://db:5432/db_usuarios
+      - DATASOURCE_USERNAME=${DATASOURCE_USERNAME}
+      - DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD}
+      - eureka.client.serviceUrl.defaultZone=http://hackaton-discovery-service:8761/eureka/
+
+
+
+  hackaton-pagamentos-app:
+    image: 'hackaton-pagamentos-app:0.0.1-SNAPSHOT'
+    build:
+      context: ../hackaton-pagamentos-app
+    container_name: hackaton-pagamentos-app
+    ports:
+      - 8082:8082
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+      hackaton-discovery-service:
+        condition: service_started
+    environment:
+      - DATASOURCE_URL=jdbc:postgresql://db:5432/db_pagamentos
+      - DATASOURCE_USERNAME=${DATASOURCE_USERNAME}
+      - DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD}
+      - eureka.client.serviceUrl.defaultZone=http://hackaton-discovery-service:8761/eureka/
+
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USERNAME: ${DATASOURCE_USERNAME}
+      POSTGRES_PASSWORD: ${DATASOURCE_PASSWORD}
+      POSTGRES_MULTIPLE_DATABASES: db_usuarios, db_pagamentos
+    volumes:
+      - ./scripts/multiple-databases.sh:/docker-entrypoint-initdb.d/multiple-databases.sh
+      - ./postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5

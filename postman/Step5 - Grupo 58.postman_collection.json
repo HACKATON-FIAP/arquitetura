@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "c4594509-3b5e-44fd-b2f8-04ac7d0f4d2e",
+		"name": "Step5 - Grupo 58",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16170565"
+	},
+	"item": [
+		{
+			"name": "(1) Usuários",
+			"item": [
+				{
+					"name": "(1) Registrar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Step5 - Group58\",\n    \"username\":\"step5@gmail.com\",\n    \"password\":\"teste123\",\n    \"passwordConfirmation\": \"teste123\",\n    \"email\": \"step5@gmail.com\",\n    \"role\": \"ROLE_ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(2) Todos Usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(3) Autenticar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"step5@gmail.com\",\n    \"password\":\"teste123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/autenticar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"autenticar"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "(2) Gestão-de-Itens",
+			"item": [
+				{
+					"name": "POST Produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6InN0ZXA1QGdtYWlsLmNvbSIsImlhdCI6MTcyMTI2Mzc0OCwiZXhwIjoxNzIxMjY5NzQ4fQ.qqQfV-g9QchKAcYG_thB8r06qh_Tm_s2uKjP1OF1cfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Camiseta 2\",\n    \"description\":\"Para usar no dia a dia\",\n    \"quantity\": 10,\n    \"price\": 10.55\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET AllProdutos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6InN0ZXA1QGdtYWlsLmNvbSIsImlhdCI6MTcyMTI2Mzc0OCwiZXhwIjoxNzIxMjY5NzQ4fQ.qqQfV-g9QchKAcYG_thB8r06qh_Tm_s2uKjP1OF1cfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ProdutosById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6InN0ZXA1QGdtYWlsLmNvbSIsImlhdCI6MTcyMTI2Mzc0OCwiZXhwIjoxNzIxMjY5NzQ4fQ.qqQfV-g9QchKAcYG_thB8r06qh_Tm_s2uKjP1OF1cfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/produtos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT UpdateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImplZmZlcnNvbi5zYW50b3MiLCJpYXQiOjE3MjA5OTIxNjEsImV4cCI6MTcyMDk5ODE2MX0.JVa4RmeOU4MtVNuVCDSzjMXE-F0QpasWTsUMQqfIwH8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Android 14\",\n    \"description\": \"Smartphone muito bom!\",\n     \"quantity\": 100,\n    \"price\": 50.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/produtos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE DeleteProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImplZmZlcnNvbi5zYW50b3MiLCJpYXQiOjE3MjA5OTIxNjEsImV4cCI6MTcyMDk5ODE2MX0.JVa4RmeOU4MtVNuVCDSzjMXE-F0QpasWTsUMQqfIwH8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/produtos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "(3) Carrinho",
+			"item": [
+				{
+					"name": "POST Pedidos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6InN0ZXA1QGdtYWlsLmNvbSIsImlhdCI6MTcyMTI2Mzc0OCwiZXhwIjoxNzIxMjY5NzQ4fQ.qqQfV-g9QchKAcYG_thB8r06qh_Tm_s2uKjP1OF1cfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idUsuario\": 1,\n  \"pedidoProdutos\": [\n    {\n      \"idProduto\": 2,\n      \"quantidade\": 1\n    },\n    {\n      \"idProduto\": 3,\n      \"quantidade\": 1\n    },\n    {\n      \"idProduto\": 4,\n      \"quantidade\": 3\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Pedidos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6InN0ZXA1QGdtYWlsLmNvbSIsImlhdCI6MTcyMTI2Mzc0OCwiZXhwIjoxNzIxMjY5NzQ4fQ.qqQfV-g9QchKAcYG_thB8r06qh_Tm_s2uKjP1OF1cfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PedidosById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6InN0ZXA1QGdtYWlsLmNvbSIsImlhdCI6MTcyMTI2Mzc0OCwiZXhwIjoxNzIxMjY5NzQ4fQ.qqQfV-g9QchKAcYG_thB8r06qh_Tm_s2uKjP1OF1cfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/pedidos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "(4) Pagamentos",
+			"item": [
+				{
+					"name": "POST Pagamento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6InN0ZXA1QGdtYWlsLmNvbSIsImlhdCI6MTcyMTI2Mzc0OCwiZXhwIjoxNzIxMjY5NzQ4fQ.qqQfV-g9QchKAcYG_thB8r06qh_Tm_s2uKjP1OF1cfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCarrinho\": 1,\r\n    \"valorTotal\": 100.0,\r\n    \"tipoPagamento\": \"CARTAO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/pagamento/processar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"pagamento",
+								"processar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Pagamentos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6InN0ZXA1QGdtYWlsLmNvbSIsImlhdCI6MTcyMTI2Mzc0OCwiZXhwIjoxNzIxMjY5NzQ4fQ.qqQfV-g9QchKAcYG_thB8r06qh_Tm_s2uKjP1OF1cfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/pagamento/pagamentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"pagamento",
+								"pagamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Pagamento pelo ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6InN0ZXA1QGdtYWlsLmNvbSIsImlhdCI6MTcyMTI2Mzc0OCwiZXhwIjoxNzIxMjY5NzQ4fQ.qqQfV-g9QchKAcYG_thB8r06qh_Tm_s2uKjP1OF1cfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/pagamento/pagamentos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"pagamento",
+								"pagamentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
