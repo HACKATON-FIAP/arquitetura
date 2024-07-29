@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "1785fbcf-8930-4da5-9bc6-444ccf197f0f",
+		"name": "HACKATON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16170565"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "(1) Registrar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"adj2\",\n    \"username\":\"adj2\",\n    \"password\":\"adj@1234\",\n    \"passwordConfirmation\": \"adj@1234\",\n    \"email\": \"adj2@fiap.com.br\",\n    \"role\": \"ROLE_ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/autenticacao/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"autenticacao",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(2) Todos Usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/autenticacao/todos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"autenticacao",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(3) Autenticar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"adj2\",\n    \"password\":\"adj@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/autenticacao/autenticar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"autenticacao",
+								"autenticar"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "POST Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjIxODk2MzksImV4cCI6MTcyMjE5NTYzOX0.8A-4eY7BEwgDUthqPielYUiylgTJhpd6w-HQVM3wsZI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"cpf\":\"11111111111\",\n\"nome\":\"João da Silva\",\n\"email\":\"joao@example.com\",\n\"telefone\":\"+55 11 91234-5678\",\n\"rua\":\"Rua A\",\n\"cidade\":\"Cidade\",\n\"estado\":\"Estado\",\n\"cep\":\"12345-678\",\n\"pais\":\"Brasil\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cliente/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

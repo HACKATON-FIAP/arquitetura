@@ -1,5 +1,4 @@
 services:
-
   hackaton-gateway:
     image: 'hackaton-gateway:0.0.1-SNAPSHOT'
     build:
@@ -23,14 +22,59 @@ services:
       - 8761:8761
     restart: always
 
-  hackaton-usuarios-app:
-    image: 'hackaton-usuarios-app:0.0.1-SNAPSHOT'
+  hackaton-autenticacao-app:
+    image: 'hackaton-autenticacao-app:0.0.1-SNAPSHOT'
     build:
-      context: ../hackaton-usuarios-app
-    container_name: hackaton-usuarios-app
+      context: ../hackaton-autenticacao-app
+    container_name: hackaton-autenticacao-app
     ports:
       - 8081:8081
     restart: always
+    env_file:
+      - .env.group58
+    depends_on:
+      db:
+        condition: service_healthy
+      hackaton-discovery-service:
+        condition: service_started
+    environment:
+      - DATASOURCE_URL=jdbc:postgresql://db:5432/db_autenticacao
+      - DATASOURCE_USERNAME=${DATASOURCE_USERNAME}
+      - DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD}
+      - eureka.client.serviceUrl.defaultZone=http://hackaton-discovery-service:8761/eureka/
+
+  hackaton-cartao-app:
+    image: 'hackaton-cartao-app:0.0.1-SNAPSHOT'
+    build:
+      context: ../hackaton-cartao-app
+    container_name: hackaton-cartao-app
+    ports:
+      - 8082:8082
+    restart: always
+    env_file:
+      - .env.group58
+    depends_on:
+      db:
+        condition: service_healthy
+      hackaton-discovery-service:
+        condition: service_started
+    environment:
+      - DATASOURCE_URL=jdbc:postgresql://db:5432/db_cartao
+      - DATASOURCE_USERNAME=${DATASOURCE_USERNAME}
+      - DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD}
+      - eureka.client.serviceUrl.defaultZone=http://hackaton-discovery-service:8761/eureka/
+
+
+  hackaton-clientes-app:
+    image: 'hackaton-clientes-app:0.0.1-SNAPSHOT'
+    build:
+      context: ../hackaton-clientes-app
+    container_name: hackaton-clientes-app
+    ports:
+      - 8083:8083
+    restart: always
+    env_file:
+      - .env.group58
     depends_on:
       db:
         condition: service_healthy
@@ -42,16 +86,16 @@ services:
       - DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD}
       - eureka.client.serviceUrl.defaultZone=http://hackaton-discovery-service:8761/eureka/
 
-
-
   hackaton-pagamentos-app:
     image: 'hackaton-pagamentos-app:0.0.1-SNAPSHOT'
     build:
       context: ../hackaton-pagamentos-app
     container_name: hackaton-pagamentos-app
     ports:
-      - 8082:8082
+      - 8084:8084
     restart: always
+    env_file:
+      - .env.group58
     depends_on:
       db:
         condition: service_healthy
@@ -69,10 +113,12 @@ services:
     restart: always
     ports:
       - 5432:5432
+    env_file:
+      - .env.group58
     environment:
       POSTGRES_USERNAME: ${DATASOURCE_USERNAME}
       POSTGRES_PASSWORD: ${DATASOURCE_PASSWORD}
-      POSTGRES_MULTIPLE_DATABASES: db_usuarios, db_pagamentos
+      POSTGRES_MULTIPLE_DATABASES: db_usuarios, db_pagamentos, db_cartao, db_autenticacao
     volumes:
       - ./scripts/multiple-databases.sh:/docker-entrypoint-initdb.d/multiple-databases.sh
       - ./postgres:/var/lib/postgresql/data
