@@ -63,6 +63,7 @@ services:
       - DATASOURCE_USERNAME=${DATASOURCE_USERNAME}
       - DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD}
       - eureka.client.serviceUrl.defaultZone=http://hackaton-discovery-service:8761/eureka/
+      - API_KEY=http://hackaton-clientes-app:8083/api/cliente/validarCPF/
 
 
   hackaton-clientes-app:
