@@ -10,37 +10,7 @@
 			"name": "Autenticação",
 			"item": [
 				{
-					"name": "(1) Registrar Usuário",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"nome\": \"adj2\",\n    \"username\":\"adj2\",\n    \"password\":\"adj@1234\",\n    \"passwordConfirmation\": \"adj@1234\",\n    \"email\": \"adj2@fiap.com.br\",\n    \"role\": \"ROLE_ADMIN\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/autenticacao/registrar",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"autenticacao",
-								"registrar"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "(3) Autenticar Usuário",
+					"name": "(1) Autenticar Usuário",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -54,12 +24,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/autenticacao/autenticar",
+							"raw": "http://localhost:8081/api/autenticacao/autenticar",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"autenticacao",
@@ -82,14 +52,14 @@
 			"name": "Clientes",
 			"item": [
 				{
-					"name": "POST Cliente",
+					"name": "(2) POST Cliente",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI1NjIxNzEsImV4cCI6MTcyMjU2ODE3MX0.eUsRC8OioSB7eqFAHjDQgcNyRhD6pmygu4MSmqxemFo",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI2Mjk1MDAsImV4cCI6MTcyMjYzNTUwMH0.l89Nly4FvER7NweUuVZKLtNvbMYTkAbtzI5Qmca5a6U",
 									"type": "string"
 								}
 							]
@@ -127,14 +97,14 @@
 			"name": "Cartão",
 			"item": [
 				{
-					"name": "Gerar Cartão",
+					"name": "(3) Gerar Cartão",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI1NjIxNzEsImV4cCI6MTcyMjU2ODE3MX0.eUsRC8OioSB7eqFAHjDQgcNyRhD6pmygu4MSmqxemFo",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI2Mjk1MDAsImV4cCI6MTcyMjYzNTUwMH0.l89Nly4FvER7NweUuVZKLtNvbMYTkAbtzI5Qmca5a6U",
 									"type": "string"
 								}
 							]
