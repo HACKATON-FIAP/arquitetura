@@ -82,7 +82,7 @@ services:
       hackaton-discovery-service:
         condition: service_started
     environment:
-      - DATASOURCE_URL=jdbc:postgresql://db:5432/db_usuarios
+      - DATASOURCE_URL=jdbc:postgresql://db:5432/db_clientes
       - DATASOURCE_USERNAME=${DATASOURCE_USERNAME}
       - DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD}
       - eureka.client.serviceUrl.defaultZone=http://hackaton-discovery-service:8761/eureka/
@@ -119,7 +119,7 @@ services:
     environment:
       POSTGRES_USERNAME: ${DATASOURCE_USERNAME}
       POSTGRES_PASSWORD: ${DATASOURCE_PASSWORD}
-      POSTGRES_MULTIPLE_DATABASES: db_usuarios, db_pagamentos, db_cartao, db_autenticacao
+      POSTGRES_MULTIPLE_DATABASES: db_clientes, db_pagamentos, db_cartao, db_autenticacao
     volumes:
       - ./scripts/multiple-databases.sh:/docker-entrypoint-initdb.d/multiple-databases.sh
       - ./postgres:/var/lib/postgresql/data

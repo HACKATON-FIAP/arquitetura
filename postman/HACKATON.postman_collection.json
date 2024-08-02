@@ -40,27 +40,6 @@
 					"response": []
 				},
 				{
-					"name": "(2) Todos Usuários",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/autenticacao/todos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"autenticacao",
-								"todos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "(3) Autenticar Usuário",
 					"request": {
 						"method": "POST",
@@ -110,7 +89,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI0ODExNTMsImV4cCI6MTcyMjQ4NzE1M30.zGStUwZtV1NPD87nP9MTt37yxJZSbV6Z1YpaFCUFaMc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI1NjIxNzEsImV4cCI6MTcyMjU2ODE3MX0.eUsRC8OioSB7eqFAHjDQgcNyRhD6pmygu4MSmqxemFo",
 									"type": "string"
 								}
 							]
@@ -141,57 +120,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "GET validarCPF",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI0ODExNTMsImV4cCI6MTcyMjQ4NzE1M30.zGStUwZtV1NPD87nP9MTt37yxJZSbV6Z1YpaFCUFaMc",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/cliente/validarCPF/11111111111",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"cliente",
-								"validarCPF",
-								"11111111111"
-							],
-							"query": [
-								{
-									"key": "cpf",
-									"value": "11111111111",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -206,7 +134,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI0ODExNTMsImV4cCI6MTcyMjQ4NzE1M30.zGStUwZtV1NPD87nP9MTt37yxJZSbV6Z1YpaFCUFaMc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI1NjIxNzEsImV4cCI6MTcyMjU2ODE3MX0.eUsRC8OioSB7eqFAHjDQgcNyRhD6pmygu4MSmqxemFo",
 									"type": "string"
 								}
 							]
@@ -215,7 +143,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"cpf\":\"11111111111\",\n\"limite\":1000,\n\"numero\":\"5200 1211 1435 1234\",\n\"data_validade\":\"12/24\",\n\"cvv\":\"123\"\n}",
+							"raw": "{\n\"cpf\":\"11111111111\",\n\"limite\": 1000,\n\"numero\":\"5200 1211 1434 1234\",\n\"data_validade\":\"12/24\",\n\"cvv\":\"123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
