@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "1785fbcf-8930-4da5-9bc6-444ccf197f0f",
+		"_postman_id": "7eb71d68-5845-461b-8af5-a2a1977f3797",
 		"name": "HACKATON",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "16170565"
+		"_exporter_id": "4444154"
 	},
 	"item": [
 		{
@@ -130,6 +130,62 @@
 							"path": [
 								"api",
 								"cartao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pagamento",
+			"item": [
+				{
+					"name": "(4) Registrar Pagamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"cpf\":\"1111111111\",\r\n \"numero\":\"5200 1211 1434 1234\",\r\n \"data_validade\":\"12/24\",\r\n \"cvv\":\"123\",\r\n \"valor\":100.00\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pagamentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pagamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(5) Consultar Pagamento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pagamentos/cliente/1111111111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pagamentos",
+								"cliente",
+								"1111111111"
 							]
 						}
 					},

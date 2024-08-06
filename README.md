@@ -8,4 +8,4 @@ Este projeto em Java possui a seguinte estrutura:
 
 ## Diagrama da Arquitetura
 
-<img src="images/Diagram.jpg" alt="Diagrama da arquitetura do sistema">
+<img src="Diagram.jpg" alt="Diagrama da arquitetura do sistema">
