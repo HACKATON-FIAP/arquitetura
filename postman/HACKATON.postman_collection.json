@@ -58,7 +58,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMxNjM1MzYsImV4cCI6MTcyMzE2OTUzNn0.ju8vDzwJnhoMK3DzU5KMcha10aI09_h_6SHlpJT8TfE",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMyMTcyODAsImV4cCI6MTcyMzIyMzI4MH0.zViWD6aYyseWnuMzBM7sYD-Xas8C8h7gyVWf1RKhgNE",
 									"type": "string"
 								}
 							]
@@ -67,7 +67,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"cpf\":\"12345678911\",\n\"nome\":\"João da Silva\",\n\"email\":\"joao@example.com\",\n\"telefone\":\"+55 11 91234-5678\",\n\"rua\":\"Rua A\",\n\"cidade\":\"Cidade\",\n\"estado\":\"Estado\",\n\"cep\":\"12345-678\",\n\"pais\":\"Brasil\"\n}",
+							"raw": "{\n\"cpf\":\"12345678912\",\n\"nome\":\"João da Silva\",\n\"email\":\"joao@example.com\",\n\"telefone\":\"+55 11 91234-5678\",\n\"rua\":\"Rua A\",\n\"cidade\":\"Cidade\",\n\"estado\":\"Estado\",\n\"cep\":\"12345-678\",\n\"pais\":\"Brasil\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -96,14 +96,14 @@
 			"name": "Cartão",
 			"item": [
 				{
-					"name": "(3) POST Gerar Cartão",
+					"name": "(3) POST Registrar Cartão",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMxNjM1MzYsImV4cCI6MTcyMzE2OTUzNn0.ju8vDzwJnhoMK3DzU5KMcha10aI09_h_6SHlpJT8TfE",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMyMTcyODAsImV4cCI6MTcyMzIyMzI4MH0.zViWD6aYyseWnuMzBM7sYD-Xas8C8h7gyVWf1RKhgNE",
 									"type": "string"
 								}
 							]
@@ -112,7 +112,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"cpf\":\"12345678911\",\r\n\"limite\": 1000,\r\n\"numero\":\"5200 1211 1436 1234\",\r\n\"data_validade\":\"12/24\",\r\n\"cvv\":\"123\"\r\n}",
+							"raw": "{\r\n\"cpf\":\"12345678912\",\r\n\"limite\": 100.0,\r\n\"numero\":\"5204 1212 1111 1234\",\r\n\"data_validade\":\"12/24\",\r\n\"cvv\":\"123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -120,7 +120,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/cartao",
+							"raw": "http://localhost:8080/api/cartao/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -128,7 +128,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"cartao"
+								"cartao",
+								""
 							]
 						}
 					},
@@ -147,7 +148,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMxNjM1MzYsImV4cCI6MTcyMzE2OTUzNn0.ju8vDzwJnhoMK3DzU5KMcha10aI09_h_6SHlpJT8TfE",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMyMTcyODAsImV4cCI6MTcyMzIyMzI4MH0.zViWD6aYyseWnuMzBM7sYD-Xas8C8h7gyVWf1RKhgNE",
 									"type": "string"
 								}
 							]
@@ -156,7 +157,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"cpf\":\"12345678911\",\r\n\"numero\":\"5200 1211 1436 1234\",\r\n\"data_validade\":\"12/24\",\r\n\"cvv\":\"123\",\r\n \"valor\":100\r\n}",
+							"raw": "{\r\n \"cpf\":\"12345678912\",\r\n\"numero\":\"5204 1212 1111 1234\",\r\n\"data_validade\":\"12/24\",\r\n\"cvv\":\"123\",\r\n\"valor\":10.0\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -186,7 +187,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMxNjM1MzYsImV4cCI6MTcyMzE2OTUzNn0.ju8vDzwJnhoMK3DzU5KMcha10aI09_h_6SHlpJT8TfE",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMyMTcyODAsImV4cCI6MTcyMzIyMzI4MH0.zViWD6aYyseWnuMzBM7sYD-Xas8C8h7gyVWf1RKhgNE",
 									"type": "string"
 								}
 							]
@@ -194,7 +195,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/pagamentos/cliente/12345678911",
+							"raw": "http://localhost:8080/api/pagamentos/cliente/12345678912",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -204,7 +205,7 @@
 								"api",
 								"pagamentos",
 								"cliente",
-								"12345678911"
+								"12345678912"
 							]
 						}
 					},
