@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "7eb71d68-5845-461b-8af5-a2a1977f3797",
+		"_postman_id": "e14a59f4-8bb7-4509-8c97-5eb68dffa82e",
 		"name": "HACKATON",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "4444154"
+		"_exporter_id": "16170565"
 	},
 	"item": [
 		{
@@ -24,16 +24,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/autenticacao/autenticar",
+							"raw": "http://localhost:8080/api/autenticacao",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"api",
-								"autenticacao",
-								"autenticar"
+								"autenticacao"
 							],
 							"query": [
 								{
@@ -59,7 +58,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI2Mjk1MDAsImV4cCI6MTcyMjYzNTUwMH0.l89Nly4FvER7NweUuVZKLtNvbMYTkAbtzI5Qmca5a6U",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMwODk1MTEsImV4cCI6MTcyMzA5NTUxMX0.aKREiD8dM7JNIVQqTv_kM_2hG-joD3_YTJQcfUxaykM",
 									"type": "string"
 								}
 							]
@@ -97,14 +96,14 @@
 			"name": "Cartão",
 			"item": [
 				{
-					"name": "(3) Gerar Cartão",
+					"name": "(3) POST Gerar Cartão",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI2Mjk1MDAsImV4cCI6MTcyMjYzNTUwMH0.l89Nly4FvER7NweUuVZKLtNvbMYTkAbtzI5Qmca5a6U",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMwOTEzMTEsImV4cCI6MTcyMzA5NzMxMX0.2fTTT3sdjg4AZwHy1Hp-NuMRzBQHeE74q_Ejct5H_qE",
 									"type": "string"
 								}
 							]
@@ -113,7 +112,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"cpf\":\"11111111111\",\n\"limite\": 1000,\n\"numero\":\"5200 1211 1434 1234\",\n\"data_validade\":\"12/24\",\n\"cvv\":\"123\"\n}",
+							"raw": "{\r\n\"cpf\":\"11111111111\",\r\n\"limite\": 1000,\r\n\"numero\":\"5200 1211 1436 1234\",\r\n\"data_validade\":\"12/24\",\r\n\"cvv\":\"123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -143,11 +142,21 @@
 				{
 					"name": "(4) Registrar Pagamento",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI5MTAzMzAsImV4cCI6MTcyMjkxNjMzMH0.sNkoRdPY5FMKjZvVTVbHkuBddZivUi2Bsi-rWwBchUE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"cpf\":\"1111111111\",\r\n \"numero\":\"5200 1211 1434 1234\",\r\n \"data_validade\":\"12/24\",\r\n \"cvv\":\"123\",\r\n \"valor\":100.00\r\n}\r\n",
+							"raw": "{\r\n \"cpf\":\"1111111111\",\r\n \"numero\":\"5200 1211 1434 1234\",\r\n \"data_validade\":\"12/24\",\r\n \"cvv\":\"123\",\r\n \"valor\":100.00\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -172,6 +181,16 @@
 				{
 					"name": "(5) Consultar Pagamento",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI5OTczNzgsImV4cCI6MTcyMzAwMzM3OH0._tfsJofR-yM55NqDaAvjRHRAmIrca8VhJWyRGpC2fXI",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
