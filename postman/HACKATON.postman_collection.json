@@ -58,7 +58,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMwODk1MTEsImV4cCI6MTcyMzA5NTUxMX0.aKREiD8dM7JNIVQqTv_kM_2hG-joD3_YTJQcfUxaykM",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMxNjM1MzYsImV4cCI6MTcyMzE2OTUzNn0.ju8vDzwJnhoMK3DzU5KMcha10aI09_h_6SHlpJT8TfE",
 									"type": "string"
 								}
 							]
@@ -67,7 +67,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"cpf\":\"11111111111\",\n\"nome\":\"João da Silva\",\n\"email\":\"joao@example.com\",\n\"telefone\":\"+55 11 91234-5678\",\n\"rua\":\"Rua A\",\n\"cidade\":\"Cidade\",\n\"estado\":\"Estado\",\n\"cep\":\"12345-678\",\n\"pais\":\"Brasil\"\n}",
+							"raw": "{\n\"cpf\":\"12345678911\",\n\"nome\":\"João da Silva\",\n\"email\":\"joao@example.com\",\n\"telefone\":\"+55 11 91234-5678\",\n\"rua\":\"Rua A\",\n\"cidade\":\"Cidade\",\n\"estado\":\"Estado\",\n\"cep\":\"12345-678\",\n\"pais\":\"Brasil\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -103,7 +103,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMwOTEzMTEsImV4cCI6MTcyMzA5NzMxMX0.2fTTT3sdjg4AZwHy1Hp-NuMRzBQHeE74q_Ejct5H_qE",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMxNjM1MzYsImV4cCI6MTcyMzE2OTUzNn0.ju8vDzwJnhoMK3DzU5KMcha10aI09_h_6SHlpJT8TfE",
 									"type": "string"
 								}
 							]
@@ -112,7 +112,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"cpf\":\"11111111111\",\r\n\"limite\": 1000,\r\n\"numero\":\"5200 1211 1436 1234\",\r\n\"data_validade\":\"12/24\",\r\n\"cvv\":\"123\"\r\n}",
+							"raw": "{\r\n\"cpf\":\"12345678911\",\r\n\"limite\": 1000,\r\n\"numero\":\"5200 1211 1436 1234\",\r\n\"data_validade\":\"12/24\",\r\n\"cvv\":\"123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -147,7 +147,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI5MTAzMzAsImV4cCI6MTcyMjkxNjMzMH0.sNkoRdPY5FMKjZvVTVbHkuBddZivUi2Bsi-rWwBchUE",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMxNjM1MzYsImV4cCI6MTcyMzE2OTUzNn0.ju8vDzwJnhoMK3DzU5KMcha10aI09_h_6SHlpJT8TfE",
 									"type": "string"
 								}
 							]
@@ -156,7 +156,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n \"cpf\":\"1111111111\",\r\n \"numero\":\"5200 1211 1434 1234\",\r\n \"data_validade\":\"12/24\",\r\n \"cvv\":\"123\",\r\n \"valor\":100.00\r\n}",
+							"raw": "{\r\n \"cpf\":\"12345678911\",\r\n\"numero\":\"5200 1211 1436 1234\",\r\n\"data_validade\":\"12/24\",\r\n\"cvv\":\"123\",\r\n \"valor\":100\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -186,7 +186,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjI5OTczNzgsImV4cCI6MTcyMzAwMzM3OH0._tfsJofR-yM55NqDaAvjRHRAmIrca8VhJWyRGpC2fXI",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkajIiLCJpYXQiOjE3MjMxNjM1MzYsImV4cCI6MTcyMzE2OTUzNn0.ju8vDzwJnhoMK3DzU5KMcha10aI09_h_6SHlpJT8TfE",
 									"type": "string"
 								}
 							]
@@ -194,7 +194,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/pagamentos/cliente/1111111111",
+							"raw": "http://localhost:8080/api/pagamentos/cliente/12345678911",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -204,7 +204,7 @@
 								"api",
 								"pagamentos",
 								"cliente",
-								"1111111111"
+								"12345678911"
 							]
 						}
 					},
